@@ -1,0 +1,39 @@
+<div class="d-flex align-items-center justify-content-between mt-5 mb-4">
+  <h2>Gastos</h2>
+  <a class="btn btn-primary" routerLink="/gastos/nuevo">Agregar gasto</a>
+</div>
+
+<div class="table-responsive mb-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Fecha de gasto</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="expenses.length; else emptyMessage">
+        <tr *ngFor="let expense of expenses">
+          <td>{{ expense.id }}</td>
+          <td>{{ expense.type }}</td>
+          <td>{{ expense.amount | currency }}</td>
+          <td>{{ expense.description }}</td>
+          <td>{{ expense.expense_date | date:'dd/MM/Y' }}</td>
+          <td>
+            <a [routerLink]="['/gastos', expense.id, 'editar']"><i class="ri-edit-box-line"></i></a>
+            <a href="#"><i class="ri-delete-bin-2-line"></i></a>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-template #emptyMessage>
+        <tr>
+          <td colspan="6">No hay datos para mostrar</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>
