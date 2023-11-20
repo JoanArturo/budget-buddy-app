@@ -1,0 +1,24 @@
+/*================ My Variables ================*/
+$my-primary-color        : #3498DB;
+$my-dark-color           : #141824;
+$my-secondary-light-color: #EFF2F6;
+$my-secondary-color      : #858A9B;
+$my-white-color          : #FFFFFF;
+$my-border-color         : #D9D9D9;
+$my-column-title-color   : #31374A;
+$my-body-color           : #F5F7FA;
+
+/*================ Bootstrap Variables ================*/
+$font-family-base: 'Nunito Sans', sans-serif;
+
+$primary: $my-primary-color;
+$body-bg: $my-body-color;
+
+$table-bg: none;
+$table-cell-padding-y: 1.25rem;
+$table-border-color: $my-border-color;
+
+$btn-padding-y: 8px;
+$btn-padding-x: 20px;
+$btn-border-radius: 3px;
+$btn-font-weight: bold;

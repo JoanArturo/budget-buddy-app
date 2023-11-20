@@ -1,3 +1,10 @@
-$font-family-base: 'Nunito Sans', sans-serif;
-
+@import 'assets/scss/variables';
 @import "bootstrap/scss/bootstrap";
+@import 'assets/scss/table';
+@import 'assets/scss/button';
+
+.section-title {
+  margin: 0;
+  font-weight: bold;
+  color: $my-dark-color;
+}

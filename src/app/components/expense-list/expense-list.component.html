@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center justify-content-between mt-5 mb-4">
-  <h2>Gastos</h2>
+  <h2 class="section-title">Gastos</h2>
   <a class="btn btn-primary" routerLink="/gastos/nuevo">Agregar gasto</a>
 </div>
 
@@ -12,7 +12,7 @@
         <th scope="col">Cantidad</th>
         <th scope="col">Descripción</th>
         <th scope="col">Fecha de gasto</th>
-        <th scope="col"></th>
+        <th scope="col" class="table-head-action"></th>
       </tr>
     </thead>
     <tbody>
@@ -23,7 +23,7 @@
           <td>{{ expense.amount | currency }}</td>
           <td>{{ expense.description }}</td>
           <td>{{ expense.expense_date | date:'dd/MM/Y' }}</td>
-          <td>
+          <td class="table-data-action">
             <a [routerLink]="['/gastos', expense.id, 'editar']"><i class="ri-edit-box-line"></i></a>
             <a href="#"><i class="ri-delete-bin-2-line"></i></a>
           </td>
