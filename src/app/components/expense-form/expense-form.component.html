@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center justify-content-between flex-wrap mt-5 mb-4 border-bottom">
-  <h2 class="section-title mb-4">Nuevo gasto</h2>
+  <h2 class="section-title mb-4">{{ getFormTitle() }}</h2>
   <div class="d-flex gap-2 mb-3">
     <a class="btn btn-outline-secondary" routerLink="/gastos">Cancelar</a>
     <button type="button" class="btn btn-primary" (click)="saveExpense()" [disabled]="this.expenseForm.invalid">Guardar gasto</button>
