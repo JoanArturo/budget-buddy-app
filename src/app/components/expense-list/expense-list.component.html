@@ -24,8 +24,10 @@
           <td>{{ expense.description }}</td>
           <td>{{ expense.expense_date | date:'dd/MM/Y' }}</td>
           <td class="table-data-action">
-            <a [routerLink]="['/gastos', expense.id, 'editar']"><i class="ri-edit-box-line"></i></a>
-            <a href="#"><i class="ri-delete-bin-2-line"></i></a>
+            <div>
+              <a [routerLink]="['/gastos', expense.id, 'editar']"><i class="ri-edit-box-line"></i></a>
+              <a href="#"><i class="ri-delete-bin-2-line"></i></a>
+            </div>
           </td>
         </tr>
       </ng-container>
