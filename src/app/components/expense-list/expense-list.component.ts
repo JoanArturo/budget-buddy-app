@@ -8,7 +8,7 @@ import { ExpenseService } from 'src/app/services/expense.service';
   styleUrls: ['./expense-list.component.scss']
 })
 export class ExpenseListComponent implements OnInit {
-  expenses!: Expense[];
+  expenses: Expense[] = [];
 
   constructor(
     private expenseService: ExpenseService
