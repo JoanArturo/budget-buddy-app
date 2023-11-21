@@ -18,6 +18,12 @@ export class ExpenseListComponent implements OnInit {
     this.loadDataIntoTable();
   }
 
+  deleteExpense(id: number): void {
+    this.expenseService.deleteExpense(id).subscribe(response => {
+      this.expenses = this.expenses.filter(expense => expense.id != id)
+    });
+  }
+
   private loadDataIntoTable(): void {
     this.expenseService.getExpenses().subscribe(expenses => this.expenses = expenses);
   }

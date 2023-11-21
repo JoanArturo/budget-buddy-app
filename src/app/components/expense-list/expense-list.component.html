@@ -26,7 +26,7 @@
           <td class="table-data-action">
             <div>
               <a [routerLink]="['/gastos', expense.id, 'editar']"><i class="ri-edit-box-line"></i></a>
-              <a href="#"><i class="ri-delete-bin-2-line"></i></a>
+              <button class="btn btn-link p-0" (click)="deleteExpense(expense.id)"><i class="ri-delete-bin-2-line"></i></button>
             </div>
           </td>
         </tr>
