@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Expense } from 'src/app/models/expense.model';
 import { ExpenseService } from 'src/app/services/expense.service';
+import * as Toastify from 'toastify-js';
 
 @Component({
   selector: 'app-expense-list',
@@ -20,11 +21,25 @@ export class ExpenseListComponent implements OnInit {
 
   deleteExpense(id: number): void {
     this.expenseService.deleteExpense(id).subscribe(response => {
-      this.expenses = this.expenses.filter(expense => expense.id != id)
+      this.showSuccessToast('Gasto eliminado');
+      this.expenses = this.expenses.filter(expense => expense.id != id);
     });
   }
 
   private loadDataIntoTable(): void {
     this.expenseService.getExpenses().subscribe(expenses => this.expenses = expenses);
+  }
+
+  private showSuccessToast(message: string): void {
+    Toastify({
+      text: message,
+      close: true,
+      gravity: "bottom",
+      position: "center",
+      stopOnFocus: true,
+      style: {
+        background: "#189586",
+      }
+    }).showToast();
   }
 }
