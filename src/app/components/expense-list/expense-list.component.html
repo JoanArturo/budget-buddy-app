@@ -1,6 +1,10 @@
-<div class="d-flex align-items-center justify-content-between mt-5 mb-4">
+<div class="d-flex align-items-center justify-content-between gap-2 flex-wrap mt-5 mb-4">
   <h2 class="section-title">Gastos</h2>
-  <a class="btn btn-primary" routerLink="/gastos/nuevo">Agregar gasto</a>
+
+  <div class="d-flex align-items-center flex-wrap gap-3 gap-sm-5">
+    <p class="m-0 total-spent-text">Total gastado: <span class="fw-bold ms-1"><i class="ri-arrow-down-s-fill text-danger"></i> {{ total | currency }}</span></p>
+    <a class="btn btn-primary" routerLink="/gastos/nuevo">Agregar gasto</a>
+  </div>
 </div>
 
 <div class="table-responsive mb-5">

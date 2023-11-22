@@ -1,5 +1,6 @@
 /*================ My Variables ================*/
 $my-primary-color        : #3498DB;
+$my-danger-color         : #FB2E2E;
 $my-dark-color           : #141824;
 $my-secondary-light-color: #EFF2F6;
 $my-secondary-color      : #858A9B;
@@ -12,7 +13,9 @@ $my-body-color           : #F5F7FA;
 $font-family-base: 'Nunito Sans', sans-serif;
 
 $primary: $my-primary-color;
+$danger: $my-danger-color;
 $body-bg: $my-body-color;
+$body-color: $my-dark-color;
 
 $table-bg: none;
 $table-cell-padding-y: 1.25rem;

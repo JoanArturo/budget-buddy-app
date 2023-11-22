@@ -10,6 +10,7 @@ import * as Toastify from 'toastify-js';
 })
 export class ExpenseListComponent implements OnInit {
   expenses: Expense[] = [];
+  total: number = 0;
 
   constructor(
     private expenseService: ExpenseService
@@ -23,11 +24,21 @@ export class ExpenseListComponent implements OnInit {
     this.expenseService.deleteExpense(id).subscribe(response => {
       this.showSuccessToast('Gasto eliminado');
       this.expenses = this.expenses.filter(expense => expense.id != id);
+      this.calculateTotal();
     });
   }
 
   private loadDataIntoTable(): void {
-    this.expenseService.getExpenses().subscribe(expenses => this.expenses = expenses);
+    this.expenseService.getExpenses().subscribe(expenses => {
+      this.expenses = expenses;
+      this.calculateTotal();
+    });
+  }
+
+  private calculateTotal(): void {
+    this.total = this.expenses.reduce((accumulated, currentValue) => {
+      return accumulated + Number(currentValue.amount);
+    }, 0);
   }
 
   private showSuccessToast(message: string): void {
